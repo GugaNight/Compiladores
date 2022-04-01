@@ -10,6 +10,7 @@ ListCmd --> Cmd | Cmd PVIG ListCmd
 Cmd --> CmdIf | CmdWhile | CmdRead | CmdWrite | CmdAtrib | CmdComp
 
 CmdIf --> IF Expr THEN Cmd
+			| IF Expr THEN Cmd ELSE Cmd
 
 CmdRead --> READ (ListId)
 CmdWrite --> WRITE (ListW)
@@ -20,3 +21,4 @@ CmdAtrib --> IDENTIFIER :- Expr
 
 Expr --> Expr OPREL Expr | Expr OPAD Expr | Expr OPMULT Expr
 Expr --> IDENTIFIER | CTE | ABPAR EXPR FPAR | TRUE | FALSE | OPNEG Expr
+
